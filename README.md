@@ -166,7 +166,8 @@ This step verifies whether PC0 can successfully communicate with the DNS server 
 
 ### Screenshot: PC0 DNS Testing
 
-![PC0 DNS Testing](07-PC0-DNS-Test.jpg)
+![PC0 DNS Testing](07-PC0-DNS<img width="1920" height="1080" alt="07-PCO-DNS-Test" src="https://github.com/user-attachments/assets/3dd2ac8e-6312-47b5-b60f-36426e4e94bf" />
+-Test.jpg)
 
 ## Step 8: Verify DNS Configuration on PC1
 
