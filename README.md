@@ -1,139 +1,211 @@
-DNS Server Configuration and Network Testing using Cisco Packet Tracer
+DNS Configuration Using Cisco Packet Tracer
 
-📌 Project Overview
+Objective
 
-This project demonstrates the configuration and testing of a DNS (Domain Name System) Server using Cisco Packet Tracer.
+- To configure DNS (Domain Name System) in Cisco Packet Tracer.
+- To translate domain names into IP addresses within a local network.
+- To allow client PCs to access network services using domain names instead of IP addresses.
+- To configure IP addresses on the DNS server and client computers.
+- To verify that DNS name resolution works correctly from all client devices.
 
-The main purpose of this project is to understand how DNS translates domain names into IP addresses and allows client computers to communicate with servers using domain names.
+Requirements
 
-🎯 Objectives
+- Cisco Packet Tracer software
+- 1 Switch
+- 1 Server (configured as DNS Server)
+- 2 PCs (PC0 and PC1)
+- Copper Straight-Through Ethernet cables
+- Configured IP network (network address and subnet mask)
+- DNS service enabled on the server
+- DNS records configured on the DNS server
+- DNS server IP address configured on all client PCs
 
-- To create a network topology using Cisco Packet Tracer.
-- To configure a DNS Server.
-- To enable and configure DNS services.
-- To assign IP addresses to server and client PCs.
-- To configure DNS settings on client computers.
-- To test DNS name resolution from multiple client devices.
+Step 1: Connect the Devices
 
-🛠️ Requirements
+Open Cisco Packet Tracer.
 
-- Cisco Packet Tracer
+Drag and place the following devices into the workspace:
+
 - 1 Switch
 - 1 Server (DNS Server)
-- 2 PCs (Clients)
-- Copper Straight-Through Cables
-- IP Address Configuration
-- DNS Service
+- 2 PCs (PC0 and PC1)
 
-Step 1: Create Network Topology
+Connect all devices using Copper Straight-Through cables:
 
-Open Cisco Packet Tracer and create a network topology using one switch, one server, and two client PCs.
+- Server0 to Switch
+- PC0 to Switch
+- PC1 to Switch
 
-Connect all devices using Copper Straight-Through cables.
+Wait until all device connections turn green, indicating that the network links are active.
 
-This topology provides the network infrastructure required for DNS communication between the server and client computers.
+This creates the basic network topology required for DNS configuration and communication between the server and client computers.
 
-Network Topology Screenshot:
+Screenshot:
 
 "Network Topology" (./01-Network-Topology.png)
 
 Step 2: Configure DNS Service
 
-Click on the Server and open the Services tab.
+After connecting all devices, the next step is to configure the DNS service on the server.
 
-Select DNS from the left panel and enable the DNS Service.
+- Click on Server0 to open the server configuration window.
+- Select the Services tab.
+- From the list of available services on the left panel, click DNS.
+- Make sure that the DNS Service is set to ON.
 
-DNS service allows client computers to resolve domain names into their corresponding IP addresses.
+Enabling the DNS service allows the server to translate domain names into their corresponding IP addresses.
 
-DNS Service Screenshot:
+Screenshot:
 
 "DNS Service" (./02-DNS-Service.jpg)
 
 Step 3: Configure DNS Records
 
-Configure the DNS records on the server by entering the required domain name and corresponding IP address.
+After enabling the DNS service, configure the DNS records on the server.
 
-Click Add to save the DNS record.
+- Open the Server configuration window.
+- Select the Services tab.
+- Click DNS from the left panel.
+- Enter the required domain name in the Name field.
+- Enter the corresponding server IP address in the Address field.
+- Click Add to save the DNS record.
 
-DNS records help client computers identify the IP address associated with a domain name.
+A DNS record maps a domain name to its corresponding IP address. This allows client computers to access network resources using domain names instead of IP addresses.
 
-DNS Configuration Screenshot:
+Screenshot:
 
-"DNS Configuration" (./03-DNS-Service-Configuration.jpg)
+"DNS Service Configuration" (./03-DNS-Service-Configuration.jpg)
 
 Step 4: Configure IP Address on PC0
 
-Click on PC0 and open the Desktop tab.
+After configuring the DNS service, assign an IP address to PC0.
 
-Select IP Configuration and assign the required IP address, subnet mask, and DNS server address.
+- Click on PC0.
+- Open the Desktop tab.
+- Select IP Configuration.
+- Select Static configuration.
+- Enter the following IP settings:
 
-This configuration allows PC0 to communicate with the DNS server and perform domain name resolution.
+Setting| Value
+IP Address| 192.168.1.11
+Subnet Mask| 255.255.255.0
+Default Gateway| 0.0.0.0
+DNS Server| 192.168.1.10
 
-PC0 IP Configuration Screenshot:
+This configuration assigns a static IP address to PC0 and sets the DNS server address to 192.168.1.10.
+
+It allows PC0 to communicate with the DNS server and perform domain name resolution.
+
+Screenshot:
 
 "PC0 IP Configuration" (./04-PC0-IP.jpg)
 
 Step 5: Configure IP Address on PC1
 
-Click on PC1 and open the Desktop tab.
+After configuring PC0, the next step is to assign an IP address to PC1.
 
-Select IP Configuration and configure the required IP address, subnet mask, and DNS server address.
+- Click on PC1.
+- Open the Desktop tab.
+- Select IP Configuration.
+- Select Static configuration.
+- Enter the following IP settings:
 
-This allows PC1 to communicate with the DNS server and access network resources using domain names.
+Setting| Value
+IP Address| 192.168.1.12
+Subnet Mask| 255.255.255.0
+Default Gateway| 0.0.0.0
+DNS Server| 192.168.1.10
 
-PC1 IP Configuration Screenshot:
+This configuration assigns a static IP address to PC1 and sets 192.168.1.10 as the DNS server.
+
+It allows PC1 to communicate with the DNS server and resolve domain names.
+
+Screenshot:
 
 "PC1 IP Configuration" (./05-PC1-IP.jpg)
 
-Step 6: Configure IP Address on DNS Server
+Step 6: Configure IP Address on the Server
 
-Click on the Server and open the Desktop tab.
+After configuring the client PCs, assign a static IP address to the DNS server.
 
-Select IP Configuration and assign the required IP address and subnet mask.
+- Click on Server0.
+- Open the Desktop tab.
+- Select IP Configuration.
+- Select Static configuration.
+- Enter the following IP settings:
 
-Configure the DNS server settings to enable proper communication between the server and client devices.
+Setting| Value
+IP Address| 192.168.1.10
+Subnet Mask| 255.255.255.0
+Default Gateway| 0.0.0.0
+DNS Server| 192.168.1.10
 
-Server IP Configuration Screenshot:
+This configuration assigns the IP address 192.168.1.10 to the DNS server.
+
+The server uses its own IP address as the DNS server address to provide DNS services to client computers.
+
+Screenshot:
 
 "Server IP Configuration" (./06-Server-IP.jpg)
 
 Step 7: Verify DNS Configuration on PC0
 
-Open PC0 and perform DNS testing using the configured domain name.
+After configuring the IP addresses and DNS settings, verify that DNS name resolution is working correctly on PC0.
 
-Check whether PC0 can successfully communicate with the DNS server and resolve the domain name.
+- Click on PC0.
+- Open the Desktop tab.
+- Select the DNS testing option used in the configuration.
+- Perform DNS testing using the configured domain name.
+- Check the result to verify DNS name resolution.
 
-This step verifies the DNS configuration on the first client computer.
+This step verifies whether PC0 can successfully communicate with the DNS server and resolve the configured domain name.
 
-PC0 DNS Testing Screenshot:
+Screenshot:
 
 "PC0 DNS Testing" (./07-PC0-DNS-Test.jpg)
 
 Step 8: Verify DNS Configuration on PC1
 
-Open PC1 and perform DNS testing using the configured domain name.
+After successfully testing DNS on PC0, perform DNS testing on PC1.
 
-Check whether PC1 can successfully resolve the domain name through the DNS server.
+- Click on PC1.
+- Open the Desktop tab.
+- Select the DNS testing option used in the configuration.
+- Perform DNS testing using the configured domain name.
+- Check the result to verify DNS name resolution.
 
-This confirms DNS communication from the second client computer.
+This confirms that PC1 can also communicate with the DNS server and resolve the configured domain name.
 
-PC1 DNS Testing Screenshot:
+Screenshot:
 
 "PC1 DNS Testing" (./08-PC1-DNS-Test.jpg)
 
-✅ Result
+Result
 
-The DNS Server was configured successfully using Cisco Packet Tracer.
+The DNS configuration was implemented using Cisco Packet Tracer.
 
-IP configurations were assigned to the server and client computers. DNS service was enabled and DNS testing was performed from both PC0 and PC1.
+The network topology was created, DNS service was enabled, and IP addresses were assigned to the server and client computers.
 
-📚 Conclusion
+The DNS server was configured with IP address 192.168.1.10.
 
-This project helped me understand DNS server configuration, IP addressing, DNS records, and domain name resolution.
+Both client computers were configured with the following IP settings:
 
-It also provided practical knowledge of network topology creation and client-server communication using Cisco Packet Tracer.
+- PC0: 192.168.1.11
+- PC1: 192.168.1.12
+- DNS Server: 192.168.1.10
+- Subnet Mask: 255.255.255.0
 
-👨‍💻 Author
+DNS testing was performed from both PC0 and PC1 to verify the DNS configuration.
+
+Conclusion
+
+The DNS Configuration project was completed using Cisco Packet Tracer.
+
+This project demonstrated how DNS translates domain names into IP addresses and helps client computers communicate with servers using domain names.
+
+Through this practical implementation, I gained knowledge of DNS service configuration, IP addressing, DNS records, network topology creation, and client-server communication.
+
+Author
 
 Swayam Gite
 
