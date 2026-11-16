@@ -1,3 +1,4 @@
+<img width="1920" height="1080" alt="07-PCO-DNS-Test" src="https://github.com/user-attachments/assets/f8d724bd-98e7-418b-a168-8a1fb5455136" />
 # DNS Configuration Using Cisco Packet Tracer
 
 ## Objective
